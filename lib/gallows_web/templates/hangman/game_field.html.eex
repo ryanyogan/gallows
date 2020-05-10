@@ -1,9 +1,13 @@
-<%= inspect(@tally) %>
+<div class="container" style="margin-top: 50px;">
+  <%= game_state(@tally.game_state) %>
 
-<p>
-  Turns left: <%= @tally.turns_left %>
-</p>
-
-<p>
-  Words so far: <%= word_so_far(@tally.letters) %>
-</p>
+  <div class="row">
+    <div class="col-md-4">
+      <%= render "_gallows.html", left: @tally.turns_left %>
+    </div>
+    <div class="col-md-7 offset-md-1">
+      <%= render "_status.html", conn: @conn, tally: @tally %>
+    </div>
+    </div>
+  </div>
+</div>
