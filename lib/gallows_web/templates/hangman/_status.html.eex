@@ -6,6 +6,10 @@
   Words so far: <%= word_so_far(@tally.letters) %>
 </p>
 
+<p>
+  Letters guessed: <%= word_so_far(@tally.used_letters) %>
+</p>
+
 <%= if game_over?(@tally) do %>
   <%= new_game_button(@conn) %>
 <% else %>
